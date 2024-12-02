@@ -6,4 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TredersToDoListApp.API\TredersToDoListApp.API.csproj" />
+    <ProjectReference Include="..\TredersToDoListApp.Application\TredersToDoListApp.Application.csproj" />
+    <ProjectReference Include="..\TredersToDoListApp.Domain\TredersToDoListApp.Domain.csproj" />
+    <ProjectReference Include="..\TredersToDoListApp.Infrastructure\TredersToDoListApp.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
