@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controlers\" />
     <Folder Include="DTOs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TredersToDoListApp.Application\TredersToDoListApp.Application.csproj" />
+    <ProjectReference Include="..\TredersToDoListApp.Domain\TredersToDoListApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

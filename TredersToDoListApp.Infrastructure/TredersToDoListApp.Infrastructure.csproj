@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
+    <PackageReference Include="LiteDB" Version="5.0.21" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TredersToDoListApp.Application\TredersToDoListApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
