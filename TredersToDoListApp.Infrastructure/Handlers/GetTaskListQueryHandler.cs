@@ -14,7 +14,9 @@ public sealed class GetTaskListQueryHandler : IRequestHandler<GetTaskListQuery, 
         _db = new LiteDatabase("Filename=todoapp.db;Connection=shared");
         _taskcollection = _db.GetCollection<TaskTODO>("todos");
     }
+#pragma warning disable CS1998
     public async Task<List<TaskTODO>> Handle(GetTaskListQuery request, CancellationToken cancellationToken)
+#pragma warning restore CS1998 
     {
         var chuj = new TaskTODO
         {
