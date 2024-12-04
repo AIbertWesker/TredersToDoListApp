@@ -63,6 +63,28 @@ public class TaskManager : ControllerBase
         }
     }
 
+    [HttpPut]
+    public async Task<IActionResult> ChangeStatus(int id, string newStatus)
+    {
+        try
+        {
+        var result = await _mediator.Send(new UpdateTaskCommand { Id = id, Status = newStatus});
+            return Ok(result);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (ArgumentNullException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception)
+        {
+            return UnprocessableEntity();
+        }
+    }
+
     [HttpDelete]
     public async Task<IActionResult> DeleteTask(int id)
     {
@@ -79,6 +101,5 @@ public class TaskManager : ControllerBase
         { 
             return UnprocessableEntity(ex.Message);
         }
-
     }
 }
