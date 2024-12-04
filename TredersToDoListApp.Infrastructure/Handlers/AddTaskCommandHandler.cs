@@ -6,7 +6,7 @@ using TredersToDoListApp.Domain.Models;
 
 namespace TredersToDoListApp.Infrastructure.Handlers;
 
-public class AddTaskCommandHandler : BaseHandler, IRequestHandler<AddTaskCommand, string>
+public sealed class AddTaskCommandHandler : BaseHandler, IRequestHandler<AddTaskCommand, string>
 {
     public async Task<string> Handle(AddTaskCommand request, CancellationToken cancellationToken)
     {

@@ -11,8 +11,7 @@ namespace TredersToDoListApp.API.Controlers;
 [Route("api/tasks")]
 public class TaskManager : ControllerBase
 {
-    //private readonly TaskeManager taskManager = new();
-    private readonly ISender _mediator;
+    private readonly ISender _mediator; // <3 <3 <3 <3 <3
 
     public TaskManager(ISender mediator)
     {
@@ -24,6 +23,25 @@ public class TaskManager : ControllerBase
     {
         var result = await _mediator.Send(new GetTaskListQuery { });
         return Ok(result);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetTaskById(int id)
+    {
+        try
+        {
+            var result = await _mediator.Send(new GetTaskByIdQuery { Id = id });
+
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return NotFound(new { Message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
 
     [HttpPost]
@@ -43,5 +61,24 @@ public class TaskManager : ControllerBase
         {
             return UnprocessableEntity(ex.Message);
         }
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteTask(int id)
+    {
+        try
+        {
+            var result = await _mediator.Send(new DeleteTaskCommand { Id = id });
+            return Ok(result);
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound(id);
+        }
+        catch (Exception ex) 
+        { 
+            return UnprocessableEntity(ex.Message);
+        }
+
     }
 }

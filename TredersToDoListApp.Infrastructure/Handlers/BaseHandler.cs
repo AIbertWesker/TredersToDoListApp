@@ -2,6 +2,7 @@
 using TredersToDoListApp.Domain.Models;
 
 namespace TredersToDoListApp.Infrastructure.Handlers;
+
 public class BaseHandler
 {
     internal readonly LiteDatabase _db;

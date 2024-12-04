@@ -8,7 +8,6 @@ public sealed class GetTaskListQueryHandler : BaseHandler, IRequestHandler<GetTa
 {
     public async Task<List<TaskTODO>> Handle(GetTaskListQuery request, CancellationToken cancellationToken)
     {
-        var taskList = new List<TaskTODO>();
         var result = _taskcollection.FindAll().ToList();
 
         return result;
