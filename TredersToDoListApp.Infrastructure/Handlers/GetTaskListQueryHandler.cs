@@ -18,22 +18,9 @@ public sealed class GetTaskListQueryHandler : IRequestHandler<GetTaskListQuery, 
     public async Task<List<TaskTODO>> Handle(GetTaskListQuery request, CancellationToken cancellationToken)
 #pragma warning restore CS1998 
     {
-        var chuj = new TaskTODO
-        {
-            Name = "NANANAA",
-            Description = "CHUJA",
-            Status = "askooksakoas",
-        };
+        var taskList = new List<TaskTODO>();
+        var result = _taskcollection.FindAll().ToList();
 
-        _taskcollection.Insert(chuj);
-        var listChuj = new List<TaskTODO>();
-        var gowno = _taskcollection.FindAll().ToList();
-
-        foreach (var item in gowno)
-        {
-            listChuj.Add(item);
-        }
-
-        return listChuj;
+        return result;
     }
 }
