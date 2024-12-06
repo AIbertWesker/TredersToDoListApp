@@ -18,7 +18,7 @@ public class TaskManager : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet]
+    [HttpGet("get")]
     public async Task<IActionResult> GetTasks()
     {
         var result = await _mediator.Send(new GetTaskListQuery { });
@@ -44,7 +44,7 @@ public class TaskManager : ControllerBase
         }
     }
 
-    [HttpPost]
+    [HttpPost("add")]
     public async Task<IActionResult> AddTask([FromBody] AddTaskDTO task)
     {
         try
@@ -63,7 +63,7 @@ public class TaskManager : ControllerBase
         }
     }
 
-    [HttpPut]
+    [HttpPut("edit")]
     public async Task<IActionResult> ChangeStatus(int id, string newStatus)
     {
         try
@@ -85,7 +85,7 @@ public class TaskManager : ControllerBase
         }
     }
 
-    [HttpDelete]
+    [HttpDelete("delete")]
     public async Task<IActionResult> DeleteTask(int id)
     {
         try
