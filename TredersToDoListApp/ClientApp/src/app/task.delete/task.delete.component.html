@@ -1,0 +1,12 @@
+<div class="task-container">
+    <mat-card *ngFor="let task of tasks" class="task-card">
+      <mat-card-title>{{ task.name }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ task.description }}</p>
+        <p>Status: {{ task.status }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="deleteTask(task)">Usuń</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

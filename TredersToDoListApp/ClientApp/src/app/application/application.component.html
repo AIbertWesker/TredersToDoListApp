@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="sidenav">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Treder's To Do List App</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+  
+      <mat-nav-list>
+        <mat-list-item *ngFor="let item of navigationItems" (click)="handleUserChoice(item.action)">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <div matListItemTitle>{{ item.title }}</div>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+  
+        <span>{{ toolbarTitle }}</span>
+      </mat-toolbar>
+  
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

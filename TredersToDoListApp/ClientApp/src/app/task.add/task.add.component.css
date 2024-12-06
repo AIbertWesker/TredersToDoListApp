@@ -1,0 +1,37 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
+}
+
+mat-card-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+button {
+  min-width: 150px;
+}

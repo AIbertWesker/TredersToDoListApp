@@ -1,0 +1,21 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 96px);
+    padding: 16px;
+  }
+  
+  h1, p {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 1rem;
+  }

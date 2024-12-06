@@ -1,0 +1,24 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  mat-list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+  }
+  
+  mat-icon[matListItemIcon] {
+    margin-right: 8px;
+    color: rgb(29, 29, 29);
+  }
+  
+  div[matListItemTitle] {
+    font-size: 16px;
+  }
+  
+  mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
