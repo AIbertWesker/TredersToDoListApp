@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TredersToDoListApp.API.DTOs;
 using TredersToDoListApp.Application.Commands;
 using TredersToDoListApp.Application.Queries;
-using TredersToDoListApp.Domain.Models;
 
 namespace TredersToDoListApp.API.Controlers;
 
@@ -68,7 +67,7 @@ public class TaskManager : ControllerBase
     {
         try
         {
-        var result = await _mediator.Send(new UpdateTaskCommand { Id = id, Status = newStatus});
+            var result = await _mediator.Send(new UpdateTaskCommand { Id = id, Status = newStatus });
             return Ok(result);
         }
         catch (KeyNotFoundException ex)
@@ -97,8 +96,8 @@ public class TaskManager : ControllerBase
         {
             return NotFound(id);
         }
-        catch (Exception ex) 
-        { 
+        catch (Exception ex)
+        {
             return UnprocessableEntity(ex.Message);
         }
     }

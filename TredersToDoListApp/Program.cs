@@ -1,17 +1,16 @@
 using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //swagger
-builder.Services.AddEndpointsApiExplorer(); 
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Title = "Treders API",
         Version = "v1",
-        Description = "MVC w .NET 8",
+        Description = ".NET 8",
     });
 });
 var assemblies = Assembly.Load("TredersToDoListApp.Infrastructure");

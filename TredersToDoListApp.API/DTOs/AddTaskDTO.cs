@@ -1,4 +1,5 @@
 ﻿namespace TredersToDoListApp.API.DTOs;
+
 public class AddTaskDTO
 {
     public string? Name { get; set; }

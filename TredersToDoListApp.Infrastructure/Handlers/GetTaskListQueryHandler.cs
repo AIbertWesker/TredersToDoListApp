@@ -4,6 +4,7 @@ using TredersToDoListApp.Application.Queries;
 using TredersToDoListApp.Domain.Models;
 
 namespace TredersToDoListApp.Infrastructure.Handlers;
+
 public sealed class GetTaskListQueryHandler : BaseHandler, IRequestHandler<GetTaskListQuery, List<TaskTODO>>
 {
     public async Task<List<TaskTODO>> Handle(GetTaskListQuery request, CancellationToken cancellationToken)

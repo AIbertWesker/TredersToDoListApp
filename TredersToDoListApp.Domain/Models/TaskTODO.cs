@@ -1,4 +1,5 @@
 ﻿namespace TredersToDoListApp.Domain.Models;
+
 public class TaskTODO
 {
     public int Id { get; set; }
