@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6966:6966"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+  frontend:
+    build:
+      context: ./TredersToDoListApp/ClientApp
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    environment:
+      SA_PASSWORD: "TwojeSuperHaslo123"
+      ACCEPT_EULA: "Y"
