@@ -7,7 +7,7 @@ import { TaskDeleteComponent } from './task.delete/task.delete.component';
 import { TaskHomeComponent } from './task.home/task.home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/application', pathMatch: 'full'},
+  { path: '', redirectTo: '/application/home', pathMatch: 'full'},
   { path: 'application', component: ApplicationComponent, children:
     [
       { path : 'home', component: TaskHomeComponent },
