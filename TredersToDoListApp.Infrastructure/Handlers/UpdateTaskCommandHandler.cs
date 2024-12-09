@@ -9,9 +9,9 @@ public class UpdateTaskCommandHandler : BaseHandler, IRequestHandler<UpdateTaskC
     {
         var taskToUpdate = _taskcollection.FindById(request.Id);
 
-        if (taskToUpdate == null)
+        if (taskToUpdate is null)
             throw new KeyNotFoundException($"Task with ID {request.Id} not found.");
-        if (request.Status == null)
+        if (request.Status is null)
             throw new ArgumentNullException($"Task with ID {request.Id} can not be null");
 
         taskToUpdate.Status = request.Status;

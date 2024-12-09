@@ -10,7 +10,7 @@ public sealed class GetTaskByIdQueryHandler : BaseHandler, IRequestHandler<GetTa
     {
         var result = _taskcollection.FindById(request.Id);
 
-        if (result != null)
+        if (result is not null)
             return result;
 
         throw new InvalidOperationException($"Task with ID {request.Id} not found.");

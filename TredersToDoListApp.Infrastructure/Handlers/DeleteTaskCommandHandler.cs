@@ -9,7 +9,7 @@ public sealed class DeleteTaskCommandHandler : BaseHandler, IRequestHandler<Dele
     {
         var result = _taskcollection.FindById(request.Id);
 
-        if (result == null)
+        if (result is null)
             throw new KeyNotFoundException();
 
         _taskcollection.Delete(result.Id);
