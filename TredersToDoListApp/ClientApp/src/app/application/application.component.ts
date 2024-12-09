@@ -63,7 +63,6 @@ export class ApplicationComponent implements OnInit, OnDestroy {
       { title: 'Dodaj zadanie', icon: 'add', action: 'add' },
       { title: 'Przejdź do listy zadań', icon: 'task', action: 'edit' },
       { title: 'Przejdź do listy zadań do usunięcia', icon: 'delete', action: 'delete' },
-      { title: 'Zakończ pracę', icon: 'meeting_room', action: 'exit' },
     ]
   }
 
@@ -76,11 +75,8 @@ export class ApplicationComponent implements OnInit, OnDestroy {
         this.navigateTo(action);
         this.sidenav.close();
         break;
-      case 'exit':
-        this.exit();
-        break;
       default:
-        console.warn('Nieobsługiwana akcja:', action);
+        this.exit();
     }
   }
 

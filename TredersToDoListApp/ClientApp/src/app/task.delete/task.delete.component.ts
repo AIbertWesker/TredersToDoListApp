@@ -23,8 +23,12 @@ export class TaskDeleteComponent {
   fetchTasks(): void {
     this.taskManagerService.getTasks().subscribe(
       (response: Task[]) => {
-        this.tasks = response;
-        localStorage.setItem('tasks', JSON.stringify(response));
+        if (response.length === 0) { 
+          this.applicationComponent.showError();
+        } else {
+          this.tasks = response;
+          localStorage.setItem('tasks', JSON.stringify(response));
+        }
       },
       error => {
         this.applicationComponent.showError();
